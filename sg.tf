@@ -1,7 +1,7 @@
 resource "aws_security_group" "sg" {
   name        = "SG-${var.projectName}"
   description = "Usado no EKS com 6/7SOAT"
-  vpc_id      = ""
+  vpc_id      = data.aws_vpc.vpc.id
 
   # Inbound
   ingress {
